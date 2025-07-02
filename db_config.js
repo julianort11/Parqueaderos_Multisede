@@ -1,11 +1,11 @@
-// use campusParking;
+
 
 // Colección: usuarios
 db.createCollection("usuarios", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["cedula", "nombre", "telefono"],
+            required: ["cedula", "nombreCompleto", "rol", "telefono"],
             properties: {
                 cedula: { 
                     bsonType: "string", 
@@ -17,7 +17,7 @@ db.createCollection("usuarios", {
                     properties: {
                         nombre: {
                             bsonType: "string",
-                            pattern: "[A-Z]\\w{2,}(\\s[A-Z]\\w{2,})?",
+                            pattern: "^[A-Z]\\w{2,}",
                             description: "El nombre debe comenzar con mayúscula y tener al menos 3 caracteres"
                         },
                         apellido: {
@@ -25,15 +25,19 @@ db.createCollection("usuarios", {
                             pattern: "^[A-Z]\\w{2,}",
                             description: "El apellido debe comenzar con mayúscula y tener al menos 3 caracteres"
                         }
-                    }
+                    },
                 },
                 rol: { 
                     enum: ["administrador", "empleado", "cliente"] 
                 },
                 telefono: {
-                    bsonType: "int", 
-                    minLength: 10,
-                    description: "El telefono debe tener minimo 10 numeros"
+                    bsonType: "string",
+                    pattern: "^[0-9]{10}$",
+                    description: "El teléfono debe tener exactamente 10 dígitos numéricos"
+                },
+                sede_id: { 
+                    bsonType: ["objectId", "null"], 
+                    description: "ID de la sede donde trabaja el empleado (nulo si es cliente o admin global)" 
                 }
             }
         }
@@ -47,7 +51,7 @@ db.createCollection("vehiculos", {
     validator: {
         $jsonSchema: {
             bsonType: "object",
-            required: ["placa", "tipo", "usuarios_id"],
+            required: ["placa", "tipo", "usuarios_id", "sede_id"],
             properties: {
                 placa: { 
                     bsonType: "string", 
@@ -61,6 +65,10 @@ db.createCollection("vehiculos", {
                 usuarios_id: { 
                     bsonType: "objectId", 
                     description: "Id del cliente dueño" 
+                },
+                sede_id: { 
+                    bsonType: "objectId", 
+                    description: "ID de la sede donde está registrado el vehículo" 
                 }
             }
         }
@@ -90,7 +98,8 @@ db.createCollection("sedes", {
                             bsonType: "string" 
                         },
                         numero: { 
-                            bsonType: "int" 
+                            bsonType: "int",
+                             maximum: 111 
                         },
                         barrio: { 
                             bsonType: "string" 
@@ -118,10 +127,12 @@ db.createCollection("zonas", {
                     bsonType: "string" 
                 },
                 capacidad: { 
-                    bsonType: "int" 
+                    bsonType: "int",
+                    minimum: 0 
                 },
                 cupos_disponibles: { 
-                    bsonType: "int" 
+                    bsonType: "int",
+                    minimum: 0
                 },
                 tipos_permitidos: { 
                     bsonType: "array", 
@@ -166,7 +177,8 @@ db.createCollection("parqueos", {
                     bsonType: ["double", "null"] 
                 },
                 costo: { 
-                    bsonType: ["int", "null"] 
+                    bsonType: ["int", "null"],
+                    minimum: 0 
                 }
             }
         }
