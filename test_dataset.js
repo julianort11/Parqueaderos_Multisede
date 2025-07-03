@@ -1,3 +1,7 @@
+// Carga todo el script en la consola, haciendo el proceso mas rapido, 
+// Aqui encontramos todos los datos de test para las base de datos
+// load("C:\\Users\\ortna\\OneDrive\\Documentos\\Parqueaderos_Multisede\\test_dataset.js")
+
 //Sedes
 let idSedes = db.sedes.insertMany([
     {
