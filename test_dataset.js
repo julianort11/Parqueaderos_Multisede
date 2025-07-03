@@ -205,8 +205,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos1,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaA,
-    hora_entrada: {"$date":"2025-06-20T08:15:00Z"},
-    hora_salida: {"$date":"2025-06-20T10:45:00Z"},
+    hora_entrada: new Date("2025-06-20T08:15:00Z"),
+    hora_salida: new Date("2025-06-20T10:45:00Z"),
     tiempo_total: 2.5,
     costo: 8000
   },
@@ -214,7 +214,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos2,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinB,
-    hora_entrada: {"$date":"2025-06-22T14:00:00Z"},
+    hora_entrada: new Date("2025-06-22T14:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -223,8 +223,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos3,
     sede_id: idSedeCali,
     zona_id: idZonasCaliC,
-    hora_entrada: {"$date":"2025-06-19T09:00:00Z"},
-    hora_salida: {"$date":"2025-06-19T11:30:00Z"},
+    hora_entrada: new Date("2025-06-19T09:00:00Z"),
+    hora_salida: new Date("2025-06-19T11:30:00Z"),
     tiempo_total: 2.5,
     costo: 7000
   },
@@ -232,7 +232,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos4,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaE,
-    hora_entrada: {"$date":"2025-06-25T07:45:00Z"},
+    hora_entrada: new Date("2025-06-25T07:45:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -241,8 +241,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos5,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinD,
-    hora_entrada: {"$date":"2025-06-18T12:30:00Z"},
-    hora_salida: {"$date":"2025-06-18T15:30:00Z"},
+    hora_entrada: new Date("2025-06-18T12:30:00Z"),
+    hora_salida: new Date("2025-06-18T15:30:00Z"),
     tiempo_total: 3,
     costo: 9500
   },
@@ -250,7 +250,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos6,
     sede_id: idSedeCali,
     zona_id: idZonasCaliA,
-    hora_entrada: {"$date":"2025-06-24T16:00:00Z"},
+    hora_entrada: new Date("2025-06-24T16:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -259,8 +259,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos7,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaC,
-    hora_entrada: {"$date":"2025-06-21T10:20:00Z"},
-    hora_salida: {"$date":"2025-06-21T12:00:00Z"},
+    hora_entrada: new Date("2025-06-21T10:20:00Z"),
+    hora_salida: new Date("2025-06-21T12:00:00Z"),
     tiempo_total: 1.67,
     costo: 5000
   },
@@ -268,7 +268,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos8,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinE,
-    hora_entrada: {"$date":"2025-06-23T09:15:00Z"},
+    hora_entrada: new Date("2025-06-23T09:15:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -277,8 +277,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos9,
     sede_id: idSedeCali,
     zona_id: idZonasCaliD,
-    hora_entrada: {"$date":"2025-06-26T11:00:00Z"},
-    hora_salida: {"$date":"2025-06-26T13:15:00Z"},
+    hora_entrada: new Date("2025-06-26T11:00:00Z"),
+    hora_salida: new Date("2025-06-26T13:15:00Z"),
     tiempo_total: 2.25,
     costo: 8500
   },
@@ -286,8 +286,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos10,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaB,
-    hora_entrada: {"$date":"2025-06-17T13:00:00Z"},
-    hora_salida: {"$date":"2025-06-17T15:00:00Z"},
+    hora_entrada: new Date("2025-06-17T13:00:00Z"),
+    hora_salida: new Date("2025-06-17T15:00:00Z"),
     tiempo_total: 2,
     costo: 7000
   },
@@ -295,7 +295,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos11,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinC,
-    hora_entrada: {"$date":"2025-06-19T09:00:00Z"},
+    hora_entrada: new Date("2025-06-19T09:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -304,8 +304,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos12,
     sede_id: idSedeCali,
     zona_id: idZonasCaliB,
-    hora_entrada: {"$date":"2025-06-24T07:00:00Z"},
-    hora_salida: {"$date":"2025-06-24T10:00:00Z"},
+    hora_entrada: new Date("2025-06-24T07:00:00Z"),
+    hora_salida: new Date("2025-06-24T10:00:00Z"),
     tiempo_total: 3,
     costo: 9200
   },
@@ -313,7 +313,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos13,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaD,
-    hora_entrada: {"$date":"2025-06-22T15:15:00Z"},
+    hora_entrada: new Date("2025-06-22T15:15:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -322,8 +322,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos14,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinA,
-    hora_entrada: {"$date":"2025-06-20T09:45:00Z"},
-    hora_salida: {"$date":"2025-06-20T12:30:00Z"},
+    hora_entrada: new Date("2025-06-20T09:45:00Z"),
+    hora_salida: new Date("2025-06-20T12:30:00Z"),
     tiempo_total: 2.75,
     costo: 8100
   },
@@ -331,7 +331,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos15,
     sede_id: idSedeCali,
     zona_id: idZonasCaliE,
-    hora_entrada: {"$date":"2025-06-25T08:00:00Z"},
+    hora_entrada: new Date("2025-06-25T08:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -340,8 +340,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos16,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaA,
-    hora_entrada: {"$date":"2025-06-19T12:30:00Z"},
-    hora_salida: {"$date":"2025-06-19T15:00:00Z"},
+    hora_entrada: new Date("2025-06-19T12:30:00Z"),
+    hora_salida: new Date("2025-06-19T15:00:00Z"),
     tiempo_total: 2.5,
     costo: 7600
   },
@@ -349,7 +349,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos17,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinD,
-    hora_entrada: {"$date":"2025-06-23T10:15:00Z"},
+    hora_entrada: new Date("2025-06-23T10:15:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -358,8 +358,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos18,
     sede_id: idSedeCali,
     zona_id: idZonasCaliC,
-    hora_entrada: {"$date":"2025-06-18T09:00:00Z"},
-    hora_salida: {"$date":"2025-06-18T11:00:00Z"},
+    hora_entrada: new Date("2025-06-18T09:00:00Z"),
+    hora_salida: new Date("2025-06-18T11:00:00Z"),
     tiempo_total: 2,
     costo: 6800
   },
@@ -367,7 +367,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos19,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaE,
-    hora_entrada: {"$date":"2025-06-21T08:45:00Z"},
+    hora_entrada: new Date("2025-06-21T08:45:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -376,8 +376,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos20,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinB,
-    hora_entrada: {"$date":"2025-06-17T07:30:00Z"},
-    hora_salida: {"$date":"2025-06-17T10:30:00Z"},
+    hora_entrada: new Date("2025-06-17T07:30:00Z"),
+    hora_salida: new Date("2025-06-17T10:30:00Z"),
     tiempo_total: 3,
     costo: 9000
   },
@@ -385,8 +385,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos21,
     sede_id: idSedeCali,
     zona_id: idZonasCaliA,
-    hora_entrada: {"$date":"2025-06-20T11:30:00Z"},
-    hora_salida: {"$date":"2025-06-20T14:00:00Z"},
+    hora_entrada: new Date("2025-06-20T11:30:00Z"),
+    hora_salida: new Date("2025-06-20T14:00:00Z"),
     tiempo_total: 2.5,
     costo: 8200
   },
@@ -394,7 +394,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos22,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaC,
-    hora_entrada: {"$date":"2025-06-22T13:15:00Z"},
+    hora_entrada: new Date("2025-06-22T13:15:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -403,8 +403,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos23,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinE,
-    hora_entrada: {"$date":"2025-06-25T09:45:00Z"},
-    hora_salida: {"$date":"2025-06-25T11:30:00Z"},
+    hora_entrada: new Date("2025-06-25T09:45:00Z"),
+    hora_salida: new Date("2025-06-25T11:30:00Z"),
     tiempo_total: 1.75,
     costo: 5900
   },
@@ -412,7 +412,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos24,
     sede_id: idSedeCali,
     zona_id: idZonasCaliD,
-    hora_entrada: {"$date":"2025-06-24T10:00:00Z"},
+    hora_entrada: new Date("2025-06-24T10:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -421,8 +421,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos25,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaB,
-    hora_entrada: {"$date":"2025-06-19T08:30:00Z"},
-    hora_salida: {"$date":"2025-06-19T11:30:00Z"},
+    hora_entrada: new Date("2025-06-19T08:30:00Z"),
+    hora_salida: new Date("2025-06-19T11:30:00Z"),
     tiempo_total: 3,
     costo: 9100
   },
@@ -430,7 +430,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos26,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinA,
-    hora_entrada: {"$date":"2025-06-18T15:00:00Z"},
+    hora_entrada: new Date("2025-06-18T15:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -439,8 +439,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos27,
     sede_id: idSedeCali,
     zona_id: idZonasCaliE,
-    hora_entrada: {"$date":"2025-06-21T07:45:00Z"},
-    hora_salida: {"$date":"2025-06-21T09:45:00Z"},
+    hora_entrada: new Date("2025-06-21T07:45:00Z"),
+    hora_salida: new Date("2025-06-21T09:45:00Z"),
     tiempo_total: 2,
     costo: 7000
   },
@@ -448,7 +448,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos28,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaD,
-    hora_entrada: {"$date":"2025-06-23T12:15:00Z"},
+    hora_entrada: new Date("2025-06-23T12:15:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -457,8 +457,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos29,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinC,
-    hora_entrada: {"$date":"2025-06-26T08:00:00Z"},
-    hora_salida: {"$date":"2025-06-26T10:00:00Z"},
+    hora_entrada: new Date("2025-06-26T08:00:00Z"),
+    hora_salida: new Date("2025-06-26T10:00:00Z"),
     tiempo_total: 2,
     costo: 7500
   },
@@ -466,7 +466,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos30,
     sede_id: idSedeCali,
     zona_id: idZonasCaliB,
-    hora_entrada: {"$date":"2025-06-17T14:30:00Z"},
+    hora_entrada: new Date("2025-06-17T14:30:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -475,8 +475,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos1,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaA,
-    hora_entrada: {"$date":"2025-06-18T09:00:00Z"},
-    hora_salida: {"$date":"2025-06-18T11:30:00Z"},
+    hora_entrada: new Date("2025-06-18T09:00:00Z"),
+    hora_salida: new Date("2025-06-18T11:30:00Z"),
     tiempo_total: 2.5,
     costo: 8000
   },
@@ -484,7 +484,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos2,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinD,
-    hora_entrada: {"$date":"2025-06-22T13:00:00Z"},
+    hora_entrada: new Date("2025-06-22T13:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -493,8 +493,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos3,
     sede_id: idSedeCali,
     zona_id: idZonasCaliC,
-    hora_entrada: {"$date":"2025-06-21T11:00:00Z"},
-    hora_salida: {"$date":"2025-06-21T14:00:00Z"},
+    hora_entrada: new Date("2025-06-21T11:00:00Z"),
+    hora_salida: new Date("2025-06-21T14:00:00Z"),
     tiempo_total: 3,
     costo: 9500
   },
@@ -502,7 +502,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos4,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaE,
-    hora_entrada: {"$date":"2025-06-25T10:45:00Z"},
+    hora_entrada: new Date("2025-06-25T10:45:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -511,8 +511,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos5,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinB,
-    hora_entrada: {"$date":"2025-06-20T07:30:00Z"},
-    hora_salida: {"$date":"2025-06-20T09:30:00Z"},
+    hora_entrada: new Date("2025-06-20T07:30:00Z"),
+    hora_salida: new Date("2025-06-20T09:30:00Z"),
     tiempo_total: 2,
     costo: 7000
   },
@@ -520,7 +520,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos6,
     sede_id: idSedeCali,
     zona_id: idZonasCaliA,
-    hora_entrada: {"$date":"2025-06-19T12:00:00Z"},
+    hora_entrada: new Date("2025-06-19T12:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -529,8 +529,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos7,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaB,
-    hora_entrada: {"$date":"2025-06-23T09:30:00Z"},
-    hora_salida: {"$date":"2025-06-23T11:30:00Z"},
+    hora_entrada: new Date("2025-06-23T09:30:00Z"),
+    hora_salida: new Date("2025-06-23T11:30:00Z"),
     tiempo_total: 2,
     costo: 7500
   },
@@ -538,7 +538,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos8,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinE,
-    hora_entrada: {"$date":"2025-06-18T08:00:00Z"},
+    hora_entrada: new Date("2025-06-18T08:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -547,8 +547,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos9,
     sede_id: idSedeCali,
     zona_id: idZonasCaliD,
-    hora_entrada: {"$date":"2025-06-26T14:00:00Z"},
-    hora_salida: {"$date":"2025-06-26T16:00:00Z"},
+    hora_entrada: new Date("2025-06-26T14:00:00Z"),
+    hora_salida: new Date("2025-06-26T16:00:00Z"),
     tiempo_total: 2,
     costo: 8000
   },
@@ -556,7 +556,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos10,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaC,
-    hora_entrada: {"$date":"2025-06-17T10:15:00Z"},
+    hora_entrada: new Date("2025-06-17T10:15:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -565,8 +565,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos11,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinA,
-    hora_entrada: {"$date":"2025-06-21T07:30:00Z"},
-    hora_salida: {"$date":"2025-06-21T09:30:00Z"},
+    hora_entrada: new Date("2025-06-21T07:30:00Z"),
+    hora_salida: new Date("2025-06-21T09:30:00Z"),
     tiempo_total: 2,
     costo: 7200
   },
@@ -574,7 +574,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos12,
     sede_id: idSedeCali,
     zona_id: idZonasCaliE,
-    hora_entrada: {"$date":"2025-06-22T15:00:00Z"},
+    hora_entrada: new Date("2025-06-22T15:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -583,8 +583,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos13,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaD,
-    hora_entrada: {"$date":"2025-06-20T14:30:00Z"},
-    hora_salida: {"$date":"2025-06-20T16:30:00Z"},
+    hora_entrada: new Date("2025-06-20T14:30:00Z"),
+    hora_salida: new Date("2025-06-20T16:30:00Z"),
     tiempo_total: 2,
     costo: 7800
   },
@@ -592,7 +592,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos14,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinC,
-    hora_entrada: {"$date":"2025-06-19T11:00:00Z"},
+    hora_entrada: new Date("2025-06-19T11:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -601,8 +601,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos15,
     sede_id: idSedeCali,
     zona_id: idZonasCaliB,
-    hora_entrada: {"$date":"2025-06-18T08:45:00Z"},
-    hora_salida: {"$date":"2025-06-18T11:00:00Z"},
+    hora_entrada: new Date("2025-06-18T08:45:00Z"),
+    hora_salida: new Date("2025-06-18T11:00:00Z"),
     tiempo_total: 2.25,
     costo: 7800
   },
@@ -610,7 +610,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos16,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaA,
-    hora_entrada: {"$date":"2025-06-25T13:00:00Z"},
+    hora_entrada: new Date("2025-06-25T13:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -619,8 +619,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos17,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinD,
-    hora_entrada: {"$date":"2025-06-22T09:00:00Z"},
-    hora_salida: {"$date":"2025-06-22T11:30:00Z"},
+    hora_entrada: new Date("2025-06-22T09:00:00Z"),
+    hora_salida: new Date("2025-06-22T11:30:00Z"),
     tiempo_total: 2.5,
     costo: 8200
   },
@@ -628,7 +628,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos18,
     sede_id: idSedeCali,
     zona_id: idZonasCaliC,
-    hora_entrada: {"$date":"2025-06-19T10:30:00Z"},
+    hora_entrada: new Date("2025-06-19T10:30:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null
@@ -637,8 +637,8 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos19,
     sede_id: idSedeBogota,
     zona_id: idZonasBogotaE,
-    hora_entrada: {"$date":"2025-06-21T16:00:00Z"},
-    hora_salida: {"$date":"2025-06-21T18:30:00Z"},
+    hora_entrada: new Date("2025-06-21T16:00:00Z"),
+    hora_salida: new Date("2025-06-21T18:30:00Z"),
     tiempo_total: 2.5,
     costo: 8500
   },
@@ -646,7 +646,7 @@ let parqueos = db.parqueos.insertMany([
     vehiculo_id: idVehiculos20,
     sede_id: idSedeMedellin,
     zona_id: idZonasMedellinB,
-    hora_entrada: {"$date":"2025-06-24T14:00:00Z"},
+    hora_entrada: new Date("2025-06-24T14:00:00Z"),
     hora_salida: null,
     tiempo_total: null,
     costo: null

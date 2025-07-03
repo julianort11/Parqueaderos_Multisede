@@ -174,7 +174,7 @@ db.createCollection("parqueos", {
                     bsonType: ["date", "null"] 
                 },
                 tiempo_total: { 
-                    bsonType: ["double", "null"] 
+                    bsonType: ["double", "int","null"] 
                 },
                 costo: { 
                     bsonType: ["int", "null"],
