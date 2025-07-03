@@ -1,8 +1,10 @@
-// Carga todo el script en la consola, haciendo el proceso mas rapido
-//load("C:\\Users\\ortna\\OneDrive\\Documentos\\Parqueaderos_Multisede\\db_config.js")
+// Carga todo el script en la consola para crear las colecciones rápidamente
+// load("C:\\Users\\ortna\\OneDrive\\Documentos\\Parqueaderos_Multisede\\db_config.js")
+// use parking
 
 async function crearColecciones(db) {
     // Colección: usuarios
+    // Almacena administradores, empleados y clientes con validaciones de nombre, cédula, rol, teléfono y sede asociada
     await db.createCollection("usuarios", {
         validator: {
             $jsonSchema: {
@@ -20,12 +22,12 @@ async function crearColecciones(db) {
                             nombre: {
                                 bsonType: "string",
                                 pattern: "^[A-Z]\\w{2,}",
-                                description: "El nombre debe comenzar con mayúscula y tener al menos 3 caracteres"
+                                description: "Nombre inicia en mayúscula y mínimo 3 letras"
                             },
                             apellido: {
                                 bsonType: "string",
                                 pattern: "^[A-Z]\\w{2,}",
-                                description: "El apellido debe comenzar con mayúscula y tener al menos 3 caracteres"
+                                description: "Apellido inicia en mayúscula y mínimo 3 letras"
                             }
                         },
                     },
@@ -35,11 +37,11 @@ async function crearColecciones(db) {
                     telefono: {
                         bsonType: "string",
                         pattern: "^[0-9]{10}$",
-                        description: "El teléfono debe tener exactamente 10 dígitos numéricos"
+                        description: "Teléfono debe tener exactamente 10 dígitos"
                     },
                     sede_id: { 
                         bsonType: ["objectId", "null"], 
-                        description: "ID de la sede donde trabaja el empleado (nulo si es cliente o admin global)" 
+                        description: "ID de sede si es empleado; nulo para clientes y administradores globales"
                     }
                 }
             }
@@ -48,6 +50,7 @@ async function crearColecciones(db) {
     await db.collection("usuarios").createIndex({ cedula: 1 }, { unique: true });
 
     // Colección: vehiculos
+    // Registra los vehículos asociados a clientes con placa, tipo, cliente dueño y sede
     await db.createCollection("vehiculos", {
         validator: {
             $jsonSchema: {
@@ -58,18 +61,18 @@ async function crearColecciones(db) {
                         bsonType: "string", 
                         minLength: 6, 
                         pattern: "^[A-Z]{3}[0-9]{3}$", 
-                        description: "El formato de la placa es AAA123"
+                        description: "Formato placa: AAA123"
                     },
                     tipo: { 
                         enum: ["carro", "moto", "bicicleta", "camion"] 
                     },
                     usuarios_id: { 
                         bsonType: "objectId", 
-                        description: "Id del cliente dueño" 
+                        description: "ID del cliente dueño del vehículo"
                     },
                     sede_id: { 
                         bsonType: "objectId", 
-                        description: "ID de la sede donde está registrado el vehículo" 
+                        description: "ID de la sede donde está registrado el vehículo"
                     }
                 }
             }
@@ -78,6 +81,7 @@ async function crearColecciones(db) {
     await db.collection("vehiculos").createIndex({ placa: 1 }, { unique: true });
 
     // Colección: sedes
+    // Registra sedes con información básica como nombre, ciudad y dirección detallada
     await db.createCollection("sedes", {
         validator: {
             $jsonSchema: {
@@ -114,6 +118,7 @@ async function crearColecciones(db) {
     await db.collection("sedes").createIndex({ nombre: 1 }, { unique: true });
 
     // Colección: zonas
+    // Define zonas dentro de cada sede, con capacidad, cupos disponibles, tipos permitidos y tarifa
     await db.createCollection("zonas", {
         validator: {
             $jsonSchema: {
@@ -122,7 +127,7 @@ async function crearColecciones(db) {
                 properties: {
                     sede_id: { 
                         bsonType: "objectId", 
-                        description: "Identificador unico de la sede"
+                        description: "ID de la sede a la que pertenece la zona"
                     },
                     nombre: { 
                         bsonType: "string" 
@@ -149,6 +154,7 @@ async function crearColecciones(db) {
     await db.collection("zonas").createIndex({ sede_id: 1, nombre: 1 }, { unique: true });
 
     // Colección: parqueos
+    // Registra los ingresos y salidas de vehículos, con hora de entrada, salida, tiempo total y costo calculado
     await db.createCollection("parqueos", {
         validator: {
             $jsonSchema: {
@@ -157,25 +163,25 @@ async function crearColecciones(db) {
                 properties: {
                     vehiculo_id: { 
                         bsonType: "objectId",
-                        description: "Identificador único vehiculo" 
+                        description: "ID del vehículo que ingresa"
                     },
                     sede_id: { 
                         bsonType: "objectId",
-                        description: "Identificador único sede" 
+                        description: "ID de la sede donde ocurre el parqueo"
                     },
                     zona_id: { 
                         bsonType: "objectId", 
-                        description: "Identificador sede" 
+                        description: "ID de la zona asignada"
                     },
                     hora_entrada: { 
                         bsonType: "date", 
-                        description: "Fecha de entrada del vehiculo" 
+                        description: "Fecha y hora de entrada del vehículo"
                     },
                     hora_salida: { 
                         bsonType: ["date", "null"] 
                     },
                     tiempo_total: { 
-                        bsonType: ["double", "int","null"] 
+                        bsonType: ["double", "int", "null"] 
                     },
                     costo: { 
                         bsonType: ["int", "null"],

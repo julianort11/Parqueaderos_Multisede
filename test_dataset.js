@@ -657,8 +657,6 @@ let parqueos = db.parqueos.insertMany([
   }
 ])
 
-
-
 let idParqueo1 = parqueos.insertedIds[0];
 let idParqueo2 = parqueos.insertedIds[1];
 let idParqueo3 = parqueos.insertedIds[2];

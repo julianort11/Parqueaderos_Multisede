@@ -1,6 +1,6 @@
-
 // ¿Cuántos parqueos se registraron por sede en el último mes?
 db.parqueos.aggregate([
+    // Filtrar parqueos registrados desde el último mes
   {
     $match: {
       hora_entrada: {
@@ -8,6 +8,8 @@ db.parqueos.aggregate([
       }
     }
   },
+    // Vincular cada parqueo con su sede para obtener el nombre de la sede
+
   {
     $lookup: {
       from: "sedes",
@@ -16,7 +18,9 @@ db.parqueos.aggregate([
       as: "sede"
     }
   },
+    // Convertir el arreglo "sede" en un documento individual
   { $unwind: "$sede" },
+    // Agrupar por nombre de la sede y contar total de parqueos
   {
     $group: {
       _id: "$sede.nombre",
@@ -26,9 +30,9 @@ db.parqueos.aggregate([
 ]);
 
 // ¿Cuáles son las zonas más ocupadas en cada sede?
-
 db.parqueos.aggregate([
   {
+    // Agrupar por combinación de sede y zona, contando parqueos por grupo
     $group: {
       _id: {
         sede: "$sede_id",
@@ -37,6 +41,7 @@ db.parqueos.aggregate([
       cantidadParqueos: { $sum: 1 }
     }
   },
+    // Ordenar de mayor a menor ocupación
   {
     $sort: { cantidadParqueos: -1 }
   }
@@ -44,12 +49,15 @@ db.parqueos.aggregate([
     
 // ¿Cuál es el ingreso total generado por parqueo en cada sede?
 db.parqueos.aggregate([
+    // Agrupar por sede y sumar el campo "costo" para obtener ingresos
     {
         $group: {
             _id: "$sede_id",
             totalIngresos:{ $sum: "$costo" }
         }
     },
+    // Ordenar de mayor a menor ingreso
+
     {
         $sort: { totalIngresos: -1 }
     }
@@ -57,6 +65,7 @@ db.parqueos.aggregate([
 
 // ¿Qué cliente ha usado más veces el parqueadero?
 db.parqueos.aggregate([
+    // Vincular parqueos con los vehículos para conocer el cliente
     {
         $lookup: {
             from: "vehiculos",
@@ -68,6 +77,7 @@ db.parqueos.aggregate([
     {
         $unwind: "$vehiculo"
     },
+    // Agrupar por ID de cliente y contar parqueos
     {
         $group: {
             _id: "$vehiculo.usuarios_id",
@@ -84,6 +94,7 @@ db.parqueos.aggregate([
 
 // ¿Qué tipo de vehículo es más frecuente por sede?
 db.parqueos.aggregate([
+    // Vincular parqueos con vehículos para obtener el tipo de vehículo
     {
         $lookup: {
             from: "vehiculos",
@@ -95,6 +106,7 @@ db.parqueos.aggregate([
     {
         $unwind: "$vehiculo"
     },
+    // Agrupar por sede y tipo de vehículo
     {
         $group:{
             _id: {
@@ -111,6 +123,7 @@ db.parqueos.aggregate([
 
 // Dado un cliente, mostrar su historial de parqueos (fecha, sede, zona, tipo de vehículo, tiempo y costo).
 db.parqueos.aggregate([
+    // Vincular parqueos con vehículos para saber el tipo y el cliente
     {
         $lookup:{
             from: "vehiculos",
@@ -122,6 +135,7 @@ db.parqueos.aggregate([
     {
         $unwind: "$vehiculo"
     },
+    // Filtrar parqueos solo del cliente indicado (reemplaza el ObjectId por el del cliente deseado)
     {
         $match: {
             "vehiculo.usuarios_id": ObjectId("6865c2852739a144df50ec88")
@@ -138,9 +152,11 @@ db.parqueos.aggregate([
 
 // Mostrar los vehículos parqueados actualmente en cada sede.
 db.parqueos.aggregate([
+    // Filtrar parqueos activos (hora_salida nula)
     {
         $match: { hora_salida: null }
     },
+    // Vincular parqueos con información de los vehículos
     {
         $lookup: {
             from: "vehiculos",
@@ -152,6 +168,7 @@ db.parqueos.aggregate([
     {
         $unwind: "$vehiculo"
     },
+    // Proyectar la informacion de interes
     {
     $project: {
       _id: 0,
@@ -166,12 +183,14 @@ db.parqueos.aggregate([
 
 // Listar zonas que han excedido su capacidad de parqueo en algún momento.
 db.parqueos.aggregate([
+    // Agrupar por zona, contando parqueos simultáneos históricos
     {
         $group:{
             _id: "zonas_id",
             parqueosSimultaneos: { $sum: 1 }
         }
     },
+    // Vincular zonas para conocer su capacidad máxima
     {
         $lookup: {
             from: "zonas",
@@ -183,6 +202,7 @@ db.parqueos.aggregate([
     {
         $unwind: "$zona"
     },
+    // Proyectar comparación entre parqueos simultáneos y capacidad máxima
     {
         $project:{
             zona_id: "$_id",
@@ -191,6 +211,7 @@ db.parqueos.aggregate([
             excedio: {$gt: ["paequeosSimultaneos", "$zona.capacidad_maxima"]}
         }
     },
+    // Filtrar solo las zonas que hayan excedido su capacidad
     { 
         $match: { 
             excedido: true 
