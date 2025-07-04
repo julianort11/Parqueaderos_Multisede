@@ -2,6 +2,8 @@
 // load("C:\\Users\\ortna\\OneDrive\\Documentos\\Parqueaderos_Multisede\\db_config.js")
 // use parking
 
+crearColecciones(db)
+
 async function crearColecciones(db) {
     // Colección: usuarios
     // Almacena administradores, empleados y clientes con validaciones de nombre, cédula, rol, teléfono y sede asociada
@@ -47,7 +49,7 @@ async function crearColecciones(db) {
             }
         }
     });
-    await db.collection("usuarios").createIndex({ cedula: 1 }, { unique: true });
+    await db.usuarios.createIndex({ cedula: 1 }, { unique: true });
 
     // Colección: vehiculos
     // Registra los vehículos asociados a clientes con placa, tipo, cliente dueño y sede
@@ -78,7 +80,7 @@ async function crearColecciones(db) {
             }
         }
     });
-    await db.collection("vehiculos").createIndex({ placa: 1 }, { unique: true });
+    await db.vehiculos.createIndex({ placa: 1 }, { unique: true });
 
     // Colección: sedes
     // Registra sedes con información básica como nombre, ciudad y dirección detallada
@@ -115,7 +117,7 @@ async function crearColecciones(db) {
             }
         }
     });
-    await db.collection("sedes").createIndex({ nombre: 1 }, { unique: true });
+    await db.sedes.createIndex({ nombre: 1 }, { unique: true });
 
     // Colección: zonas
     // Define zonas dentro de cada sede, con capacidad, cupos disponibles, tipos permitidos y tarifa
@@ -151,7 +153,7 @@ async function crearColecciones(db) {
             }
         }
     });
-    await db.collection("zonas").createIndex({ sede_id: 1, nombre: 1 }, { unique: true });
+    await db.zonas.createIndex({ sede_id: 1, nombre: 1 }, { unique: true });
 
     // Colección: parqueos
     // Registra los ingresos y salidas de vehículos, con hora de entrada, salida, tiempo total y costo calculado
@@ -191,5 +193,5 @@ async function crearColecciones(db) {
             }
         }
     });
-    await db.collection("parqueos").createIndex({ sede_id: 1, zona_id: 1 });
+    await db.parqueos.createIndex({ sede_id: 1, zona_id: 1 });
 }
