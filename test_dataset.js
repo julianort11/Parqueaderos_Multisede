@@ -86,9 +86,9 @@ let empleadosMedellin = db.usuarios.insertMany([
     { cedula: "700000005", nombreCompleto: { nombre: "Laura", apellido: "Vargas" }, rol: "empleado", telefono: "3005555555", sede_id: idSedeMedellin },
     { cedula: "700000006", nombreCompleto: { nombre: "Pedro", apellido: "Sanchez" }, rol: "empleado", telefono: "3006666666", sede_id: idSedeMedellin },
 ]);
-let idEmpleadosMedellin1 = empleadosMedellin.insertedIds [3]; 
-let idEmpleadosMedellin2 = empleadosMedellin.insertedIds [4]; 
-let idEmpleadosMedellin3 = empleadosMedellin.insertedIds [5]; 
+let idEmpleadosMedellin1 = empleadosMedellin.insertedIds [0]; 
+let idEmpleadosMedellin2 = empleadosMedellin.insertedIds [1]; 
+let idEmpleadosMedellin3 = empleadosMedellin.insertedIds [2]; 
 
 let empleadosCali = db.usuarios.insertMany([
     // Empleados en Cali
@@ -96,9 +96,9 @@ let empleadosCali = db.usuarios.insertMany([
     { cedula: "700000008", nombreCompleto: { nombre: "Diego", apellido: "Ramirez" }, rol: "empleado", telefono: "3008888888", sede_id: idSedeCali },
     { cedula: "700000009", nombreCompleto: { nombre: "Valentina", apellido: "Castro" }, rol: "empleado", telefono: "3009999999", sede_id: idSedeCali },
 ]);
-let idEmpleadosCali1 = empleadosCali.insertedIds [10]; 
-let idEmpleadosCali2 = empleadosCali.insertedIds [11]; 
-let idEmpleadosCali3 = empleadosCali.insertedIds [12]; 
+let idEmpleadosCali1 = empleadosCali.insertedIds [0]; 
+let idEmpleadosCali2 = empleadosCali.insertedIds [1]; 
+let idEmpleadosCali3 = empleadosCali.insertedIds [2]; 
 
 let admin = db.usuarios.insertOne(
     // Empleado administrativo global sin sede asignada
@@ -135,8 +135,8 @@ let idclientes10 = clientes.insertedIds [9];
 let idclientes11 = clientes.insertedIds [10]; 
 let idclientes12 = clientes.insertedIds [11]; 
 let idclientes13 = clientes.insertedIds [12]; 
-let idclientes14 = clientes.insertedIds [12]; 
-let idclientes15 = clientes.insertedIds [13]; 
+let idclientes14 = clientes.insertedIds [13]; 
+let idclientes15 = clientes.insertedIds [14]; 
 
 //vehiculos 
 let idvehiculos = db.vehiculos.insertMany([
@@ -203,457 +203,854 @@ let idVehiculos29 = idvehiculos.insertedIds [28];
 let idVehiculos30 = idvehiculos.insertedIds [29]; 
 
 //parqueos
-
 let parqueos = db.parqueos.insertMany([
   {
-    vehiculo_id: idVehiculos1,
+    vehiculo: {
+      _id: idVehiculos1,
+      placa: "ABC123",
+      tipo: "carro"
+    },
     sede_id: idSedeBogota,
-    zona_id: idZonasBogotaA,
-    hora_entrada: new Date("2025-06-20T08:15:00Z"),
-    hora_salida: new Date("2025-06-20T10:45:00Z"),
-    tiempo_total: 2.5,
-    costo: 8000
-  },
-  {
-    vehiculo_id: idVehiculos2,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinB,
-    hora_entrada: new Date("2025-06-22T14:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos3,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliC,
-    hora_entrada: new Date("2025-06-19T09:00:00Z"),
-    hora_salida: new Date("2025-06-19T11:30:00Z"),
-    tiempo_total: 2.5,
-    costo: 7000
-  },
-  {
-    vehiculo_id: idVehiculos4,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaE,
-    hora_entrada: new Date("2025-06-25T07:45:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos5,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinD,
-    hora_entrada: new Date("2025-06-18T12:30:00Z"),
-    hora_salida: new Date("2025-06-18T15:30:00Z"),
-    tiempo_total: 3,
-    costo: 9500
-  },
-  {
-    vehiculo_id: idVehiculos6,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliA,
-    hora_entrada: new Date("2025-06-24T16:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos7,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaC,
-    hora_entrada: new Date("2025-06-21T10:20:00Z"),
-    hora_salida: new Date("2025-06-21T12:00:00Z"),
-    tiempo_total: 1.67,
-    costo: 5000
-  },
-  {
-    vehiculo_id: idVehiculos8,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinE,
-    hora_entrada: new Date("2025-06-23T09:15:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos9,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliD,
-    hora_entrada: new Date("2025-06-26T11:00:00Z"),
-    hora_salida: new Date("2025-06-26T13:15:00Z"),
-    tiempo_total: 2.25,
-    costo: 8500
-  },
-  {
-    vehiculo_id: idVehiculos10,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaB,
-    hora_entrada: new Date("2025-06-17T13:00:00Z"),
-    hora_salida: new Date("2025-06-17T15:00:00Z"),
+    zona: {
+      _id: idZonasBogotaA,
+      nombre: "Zona A",
+      tarifa_hora: 3000
+    },
+    hora_entrada: ISODate("2025-07-09T07:30:00Z"),
+    hora_salida: ISODate("2025-07-09T09:30:00Z"),
     tiempo_total: 2,
-    costo: 7000
+    costo: 6000
   },
   {
-    vehiculo_id: idVehiculos11,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinC,
-    hora_entrada: new Date("2025-06-19T09:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos12,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliB,
-    hora_entrada: new Date("2025-06-24T07:00:00Z"),
-    hora_salida: new Date("2025-06-24T10:00:00Z"),
+    vehiculo: {
+      _id: idVehiculos2,
+      placa: "DEF456",
+      tipo: "carro"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaB,
+      nombre: "Zona B",
+      tarifa_hora: 3500
+    },
+    hora_entrada: ISODate("2025-07-09T08:15:00Z"),
+    hora_salida: ISODate("2025-07-09T11:15:00Z"),
     tiempo_total: 3,
-    costo: 9200
+    costo: 10500
   },
   {
-    vehiculo_id: idVehiculos13,
+    vehiculo: {
+      _id: idVehiculos3,
+      placa: "GHI789",
+      tipo: "carro"
+    },
     sede_id: idSedeBogota,
-    zona_id: idZonasBogotaD,
-    hora_entrada: new Date("2025-06-22T15:15:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos14,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinA,
-    hora_entrada: new Date("2025-06-20T09:45:00Z"),
-    hora_salida: new Date("2025-06-20T12:30:00Z"),
-    tiempo_total: 2.75,
-    costo: 8100
-  },
-  {
-    vehiculo_id: idVehiculos15,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliE,
-    hora_entrada: new Date("2025-06-25T08:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos16,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaA,
-    hora_entrada: new Date("2025-06-19T12:30:00Z"),
-    hora_salida: new Date("2025-06-19T15:00:00Z"),
-    tiempo_total: 2.5,
-    costo: 7600
-  },
-  {
-    vehiculo_id: idVehiculos17,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinD,
-    hora_entrada: new Date("2025-06-23T10:15:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos18,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliC,
-    hora_entrada: new Date("2025-06-18T09:00:00Z"),
-    hora_salida: new Date("2025-06-18T11:00:00Z"),
-    tiempo_total: 2,
-    costo: 6800
-  },
-  {
-    vehiculo_id: idVehiculos19,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaE,
-    hora_entrada: new Date("2025-06-21T08:45:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos20,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinB,
-    hora_entrada: new Date("2025-06-17T07:30:00Z"),
-    hora_salida: new Date("2025-06-17T10:30:00Z"),
+    zona: {
+      _id: idZonasBogotaA,
+      nombre: "Zona A",
+      tarifa_hora: 3000
+    },
+    hora_entrada: ISODate("2025-07-09T10:00:00Z"),
+    hora_salida: ISODate("2025-07-09T13:00:00Z"),
     tiempo_total: 3,
     costo: 9000
   },
   {
-    vehiculo_id: idVehiculos21,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliA,
-    hora_entrada: new Date("2025-06-20T11:30:00Z"),
-    hora_salida: new Date("2025-06-20T14:00:00Z"),
-    tiempo_total: 2.5,
-    costo: 8200
-  },
-  {
-    vehiculo_id: idVehiculos22,
+    vehiculo: {
+      _id: idVehiculos9,
+      placa: "AAA111",
+      tipo: "moto"
+    },
     sede_id: idSedeBogota,
-    zona_id: idZonasBogotaC,
-    hora_entrada: new Date("2025-06-22T13:15:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
+    zona: {
+      _id: idZonasBogotaE,
+      nombre: "Zona E",
+      tarifa_hora: 2000
+    },
+    hora_entrada: ISODate("2025-07-09T07:00:00Z"),
+    hora_salida: ISODate("2025-07-09T08:30:00Z"),
+    tiempo_total: 1.5,
+    costo: 3000
   },
   {
-    vehiculo_id: idVehiculos23,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinE,
-    hora_entrada: new Date("2025-06-25T09:45:00Z"),
-    hora_salida: new Date("2025-06-25T11:30:00Z"),
-    tiempo_total: 1.75,
-    costo: 5900
-  },
-  {
-    vehiculo_id: idVehiculos24,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliD,
-    hora_entrada: new Date("2025-06-24T10:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos25,
+    vehiculo: {
+      _id: idVehiculos16,
+      placa: "BIK001",
+      tipo: "bicicleta"
+    },
     sede_id: idSedeBogota,
-    zona_id: idZonasBogotaB,
-    hora_entrada: new Date("2025-06-19T08:30:00Z"),
-    hora_salida: new Date("2025-06-19T11:30:00Z"),
+    zona: {
+      _id: idZonasBogotaC,
+      nombre: "Zona C",
+      tarifa_hora: 1000
+    },
+    hora_entrada: ISODate("2025-07-09T06:00:00Z"),
+    hora_salida: ISODate("2025-07-09T09:00:00Z"),
     tiempo_total: 3,
-    costo: 9100
+    costo: 3000
   },
   {
-    vehiculo_id: idVehiculos26,
+    vehiculo: {
+      _id: idVehiculos23,
+      placa: "TRK001",
+      tipo: "camion"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaD,
+      nombre: "Zona D",
+      tarifa_hora: 8000
+    },
+    hora_entrada: ISODate("2025-07-09T09:00:00Z"),
+    hora_salida: ISODate("2025-07-09T11:00:00Z"),
+    tiempo_total: 2,
+    costo: 16000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos4,
+      placa: "JKL012",
+      tipo: "carro"
+    },
     sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinA,
-    hora_entrada: new Date("2025-06-18T15:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
+    zona: {
+      _id: idZonasMedellinA,
+      nombre: "Zona A",
+      tarifa_hora: 3200
+    },
+    hora_entrada: ISODate("2025-07-09T07:45:00Z"),
+    hora_salida: ISODate("2025-07-09T10:45:00Z"),
+    tiempo_total: 3,
+    costo: 9600
   },
   {
-    vehiculo_id: idVehiculos27,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliE,
-    hora_entrada: new Date("2025-06-21T07:45:00Z"),
-    hora_salida: new Date("2025-06-21T09:45:00Z"),
+    vehiculo: {
+      _id: idVehiculos11,
+      placa: "CCC333",
+      tipo: "moto"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinE,
+      nombre: "Zona E",
+      tarifa_hora: 2100
+    },
+    hora_entrada: ISODate("2025-07-09T08:00:00Z"),
+    hora_salida: ISODate("2025-07-09T09:00:00Z"),
+    tiempo_total: 1,
+    costo: 2100
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos18,
+      placa: "BIK003",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaC,
+      nombre: "Zona C",
+      tarifa_hora: 1000
+    },
+    hora_entrada: ISODate("2025-07-09T10:30:00Z"),
+    hora_salida: ISODate("2025-07-09T13:30:00Z"),
+    tiempo_total: 3,
+    costo: 3000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos24,
+      placa: "TRK002",
+      tipo: "camion"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaD,
+      nombre: "Zona D",
+      tarifa_hora: 8000
+    },
+    hora_entrada: ISODate("2025-07-09T11:00:00Z"),
+    hora_salida: ISODate("2025-07-09T12:00:00Z"),
+    tiempo_total: 1,
+    costo: 8000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos5,
+      placa: "MNO345",
+      tipo: "carro"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinC,
+      nombre: "Zona C",
+      tarifa_hora: 3500
+    },
+    hora_entrada: ISODate("2025-07-09T08:30:00Z"),
+    hora_salida: ISODate("2025-07-09T10:30:00Z"),
     tiempo_total: 2,
     costo: 7000
   },
   {
-    vehiculo_id: idVehiculos28,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaD,
-    hora_entrada: new Date("2025-06-23T12:15:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
+    vehiculo: {
+      _id: idVehiculos6,
+      placa: "PQR678",
+      tipo: "carro"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinA,
+      nombre: "Zona A",
+      tarifa_hora: 3200
+    },
+    hora_entrada: ISODate("2025-07-09T09:00:00Z"),
+    hora_salida: ISODate("2025-07-09T12:00:00Z"),
+    tiempo_total: 3,
+    costo: 9600
   },
   {
-    vehiculo_id: idVehiculos29,
+    vehiculo: {
+      _id: idVehiculos13,
+      placa: "EEE555",
+      tipo: "moto"
+    },
     sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinC,
-    hora_entrada: new Date("2025-06-26T08:00:00Z"),
-    hora_salida: new Date("2025-06-26T10:00:00Z"),
+    zona: {
+      _id: idZonasMedellinE,
+      nombre: "Zona E",
+      tarifa_hora: 2100
+    },
+    hora_entrada: ISODate("2025-07-09T06:30:00Z"),
+    hora_salida: ISODate("2025-07-09T08:30:00Z"),
     tiempo_total: 2,
+    costo: 4200
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos19,
+      placa: "BIK004",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinB,
+      nombre: "Zona B",
+      tarifa_hora: 1200
+    },
+    hora_entrada: ISODate("2025-07-09T10:00:00Z"),
+    hora_salida: ISODate("2025-07-09T13:00:00Z"),
+    tiempo_total: 3,
+    costo: 3600
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos25,
+      placa: "TRK004",
+      tipo: "camion"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinD,
+      nombre: "Zona D",
+      tarifa_hora: 8500
+    },
+    hora_entrada: ISODate("2025-07-09T11:00:00Z"),
+    hora_salida: ISODate("2025-07-09T13:00:00Z"),
+    tiempo_total: 2,
+    costo: 17000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos7,
+      placa: "STU901",
+      tipo: "carro"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliA,
+      nombre: "Zona A",
+      tarifa_hora: 3400
+    },
+    hora_entrada: ISODate("2025-07-09T09:30:00Z"),
+    hora_salida: ISODate("2025-07-09T10:30:00Z"),
+    tiempo_total: 1,
+    costo: 3400
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos14,
+      placa: "FFF666",
+      tipo: "moto"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliB,
+      nombre: "Zona B",
+      tarifa_hora: 1900
+    },
+    hora_entrada: ISODate("2025-07-09T07:30:00Z"),
+    hora_salida: ISODate("2025-07-09T09:00:00Z"),
+    tiempo_total: 1.5,
+    costo: 2850
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos21,
+      placa: "BIK006",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliC,
+      nombre: "Zona C",
+      tarifa_hora: 1100
+    },
+    hora_entrada: ISODate("2025-07-09T08:00:00Z"),
+    hora_salida: ISODate("2025-07-09T11:00:00Z"),
+    tiempo_total: 3,
+    costo: 3300
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos28,
+      placa: "TRK007",
+      tipo: "camion"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliD,
+      nombre: "Zona D",
+      tarifa_hora: 8200
+    },
+    hora_entrada: ISODate("2025-07-09T10:00:00Z"),
+    hora_salida: ISODate("2025-07-09T12:00:00Z"),
+    tiempo_total: 2,
+    costo: 16400
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos22,
+      placa: "BIK007",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliC,
+      nombre: "Zona C",
+      tarifa_hora: 1100
+    },
+    hora_entrada: ISODate("2025-07-09T06:00:00Z"),
+    hora_salida: ISODate("2025-07-09T08:00:00Z"),
+    tiempo_total: 2,
+    costo: 2200
+  }, {
+    vehiculo: {
+      _id: idVehiculos8,
+      placa: "VWX234",
+      tipo: "carro"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliE,
+      nombre: "Zona E",
+      tarifa_hora: 3000
+    },
+    hora_entrada: ISODate("2025-07-09T08:15:00Z"),
+    hora_salida: ISODate("2025-07-09T10:45:00Z"),
+    tiempo_total: 2.5,
     costo: 7500
   },
   {
-    vehiculo_id: idVehiculos30,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliB,
-    hora_entrada: new Date("2025-06-17T14:30:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
+    vehiculo: {
+      _id: idVehiculos10,
+      placa: "BBB222",
+      tipo: "moto"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaA,
+      nombre: "Zona A",
+      tarifa_hora: 3000
+    },
+    hora_entrada: ISODate("2025-07-09T11:00:00Z"),
+    hora_salida: ISODate("2025-07-09T12:00:00Z"),
+    tiempo_total: 1,
+    costo: 3000
   },
   {
-    vehiculo_id: idVehiculos1,
+    vehiculo: {
+      _id: idVehiculos12,
+      placa: "DDD444",
+      tipo: "moto"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinE,
+      nombre: "Zona E",
+      tarifa_hora: 2100
+    },
+    hora_entrada: ISODate("2025-07-09T10:00:00Z"),
+    hora_salida: ISODate("2025-07-09T12:30:00Z"),
+    tiempo_total: 2.5,
+    costo: 5250
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos15,
+      placa: "GGG777",
+      tipo: "moto"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliB,
+      nombre: "Zona B",
+      tarifa_hora: 1900
+    },
+    hora_entrada: ISODate("2025-07-09T07:00:00Z"),
+    hora_salida: ISODate("2025-07-09T08:30:00Z"),
+    tiempo_total: 1.5,
+    costo: 2850
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos17,
+      placa: "BIK002",
+      tipo: "bicicleta"
+    },
     sede_id: idSedeBogota,
-    zona_id: idZonasBogotaA,
-    hora_entrada: new Date("2025-06-18T09:00:00Z"),
-    hora_salida: new Date("2025-06-18T11:30:00Z"),
+    zona: {
+      _id: idZonasBogotaC,
+      nombre: "Zona C",
+      tarifa_hora: 1000
+    },
+    hora_entrada: ISODate("2025-07-09T10:00:00Z"),
+    hora_salida: ISODate("2025-07-09T11:30:00Z"),
+    tiempo_total: 1.5,
+    costo: 1500
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos20,
+      placa: "BIK005",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinB,
+      nombre: "Zona B",
+      tarifa_hora: 1200
+    },
+    hora_entrada: ISODate("2025-07-09T09:30:00Z"),
+    hora_salida: ISODate("2025-07-09T10:30:00Z"),
+    tiempo_total: 1,
+    costo: 1200
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos26,
+      placa: "TRK005",
+      tipo: "camion"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinD,
+      nombre: "Zona D",
+      tarifa_hora: 8500
+    },
+    hora_entrada: ISODate("2025-07-09T07:45:00Z"),
+    hora_salida: ISODate("2025-07-09T09:45:00Z"),
+    tiempo_total: 2,
+    costo: 17000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos27,
+      placa: "TRK006",
+      tipo: "camion"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinD,
+      nombre: "Zona D",
+      tarifa_hora: 8500
+    },
+    hora_entrada: ISODate("2025-07-09T12:00:00Z"),
+    hora_salida: ISODate("2025-07-09T14:30:00Z"),
+    tiempo_total: 2.5,
+    costo: 21250
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos29,
+      placa: "TRK008",
+      tipo: "camion"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliD,
+      nombre: "Zona D",
+      tarifa_hora: 8200
+    },
+    hora_entrada: ISODate("2025-07-09T10:30:00Z"),
+    hora_salida: ISODate("2025-07-09T13:00:00Z"),
+    tiempo_total: 2.5,
+    costo: 20500
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos30,
+      placa: "TRK007",
+      tipo: "camion"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliD,
+      nombre: "Zona D",
+      tarifa_hora: 8200
+    },
+    hora_entrada: ISODate("2025-07-09T07:30:00Z"),
+    hora_salida: ISODate("2025-07-09T09:00:00Z"),
+    tiempo_total: 1.5,
+    costo: 12300
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos9,
+      placa: "AAA111",
+      tipo: "moto"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaE,
+      nombre: "Zona E",
+      tarifa_hora: 2000
+    },
+    hora_entrada: ISODate("2025-07-09T06:00:00Z"),
+    hora_salida: ISODate("2025-07-09T07:30:00Z"),
+    tiempo_total: 1.5,
+    costo: 3000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos11,
+      placa: "CCC333",
+      tipo: "moto"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinA,
+      nombre: "Zona A",
+      tarifa_hora: 3200
+    },
+    hora_entrada: ISODate("2025-07-09T08:00:00Z"),
+    hora_salida: ISODate("2025-07-09T09:00:00Z"),
+    tiempo_total: 1,
+    costo: 3200
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos3,
+      placa: "GHI789",
+      tipo: "carro"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaB,
+      nombre: "Zona B",
+      tarifa_hora: 3500
+    },
+    hora_entrada: ISODate("2025-07-09T07:00:00Z"),
+    hora_salida: ISODate("2025-07-09T10:00:00Z"),
+    tiempo_total: 3,
+    costo: 10500
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos2,
+      placa: "DEF456",
+      tipo: "carro"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaA,
+      nombre: "Zona A",
+      tarifa_hora: 3000
+    },
+    hora_entrada: ISODate("2025-07-09T06:30:00Z"),
+    hora_salida: ISODate("2025-07-09T08:30:00Z"),
+    tiempo_total: 2,
+    costo: 6000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos18,
+      placa: "BIK003",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaC,
+      nombre: "Zona C",
+      tarifa_hora: 1000
+    },
+    hora_entrada: ISODate("2025-07-09T09:15:00Z"),
+    hora_salida: ISODate("2025-07-09T11:15:00Z"),
+    tiempo_total: 2,
+    costo: 2000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos1,
+      placa: "ABC123",
+      tipo: "carro"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaB,
+      nombre: "Zona B",
+      tarifa_hora: 3500
+    },
+    hora_entrada: ISODate("2025-07-09T07:30:00Z"),
+    hora_salida: ISODate("2025-07-09T10:30:00Z"),
+    tiempo_total: 3,
+    costo: 10500
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos16,
+      placa: "BIK001",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaC,
+      nombre: "Zona C",
+      tarifa_hora: 1000
+    },
+    hora_entrada: ISODate("2025-07-09T06:00:00Z"),
+    hora_salida: ISODate("2025-07-09T07:30:00Z"),
+    tiempo_total: 1.5,
+    costo: 1500
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos24,
+      placa: "TRK003",
+      tipo: "camion"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaD,
+      nombre: "Zona D",
+      tarifa_hora: 8000
+    },
+    hora_entrada: ISODate("2025-07-09T11:30:00Z"),
+    hora_salida: ISODate("2025-07-09T13:30:00Z"),
+    tiempo_total: 2,
+    costo: 16000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos23,
+      placa: "TRK002",
+      tipo: "camion"
+    },
+    sede_id: idSedeBogota,
+    zona: {
+      _id: idZonasBogotaD,
+      nombre: "Zona D",
+      tarifa_hora: 8000
+    },
+    hora_entrada: ISODate("2025-07-09T09:30:00Z"),
+    hora_salida: ISODate("2025-07-09T11:00:00Z"),
+    tiempo_total: 1.5,
+    costo: 12000
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos22,
+      placa: "BIK007",
+      tipo: "bicicleta"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliC,
+      nombre: "Zona C",
+      tarifa_hora: 1100
+    },
+    hora_entrada: ISODate("2025-07-09T12:30:00Z"),
+    hora_salida: ISODate("2025-07-09T13:30:00Z"),
+    tiempo_total: 1,
+    costo: 1100
+  },{
+    vehiculo: {
+      _id: idVehiculos5,
+      placa: "MNO345",
+      tipo: "carro"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinC,
+      nombre: "Zona C",
+      tarifa_hora: 3500
+    },
+    hora_entrada: ISODate("2025-07-09T06:45:00Z"),
+    hora_salida: ISODate("2025-07-09T09:15:00Z"),
+    tiempo_total: 2.5,
+    costo: 8750
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos4,
+      placa: "JKL012",
+      tipo: "carro"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinA,
+      nombre: "Zona A",
+      tarifa_hora: 3200
+    },
+    hora_entrada: ISODate("2025-07-09T10:00:00Z"),
+    hora_salida: ISODate("2025-07-09T12:30:00Z"),
     tiempo_total: 2.5,
     costo: 8000
   },
   {
-    vehiculo_id: idVehiculos2,
+    vehiculo: {
+      _id: idVehiculos19,
+      placa: "BIK004",
+      tipo: "bicicleta"
+    },
     sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinD,
-    hora_entrada: new Date("2025-06-22T13:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
+    zona: {
+      _id: idZonasMedellinB,
+      nombre: "Zona B",
+      tarifa_hora: 1200
+    },
+    hora_entrada: ISODate("2025-07-09T13:00:00Z"),
+    hora_salida: ISODate("2025-07-09T14:00:00Z"),
+    tiempo_total: 1,
+    costo: 1200
   },
   {
-    vehiculo_id: idVehiculos3,
+    vehiculo: {
+      _id: idVehiculos21,
+      placa: "BIK006",
+      tipo: "bicicleta"
+    },
     sede_id: idSedeCali,
-    zona_id: idZonasCaliC,
-    hora_entrada: new Date("2025-06-21T11:00:00Z"),
-    hora_salida: new Date("2025-06-21T14:00:00Z"),
-    tiempo_total: 3,
-    costo: 9500
+    zona: {
+      _id: idZonasCaliC,
+      nombre: "Zona C",
+      tarifa_hora: 1100
+    },
+    hora_entrada: ISODate("2025-07-09T08:30:00Z"),
+    hora_salida: ISODate("2025-07-09T09:30:00Z"),
+    tiempo_total: 1,
+    costo: 1100
   },
   {
-    vehiculo_id: idVehiculos4,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaE,
-    hora_entrada: new Date("2025-06-25T10:45:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos5,
+    vehiculo: {
+      _id: idVehiculos13,
+      placa: "EEE555",
+      tipo: "moto"
+    },
     sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinB,
-    hora_entrada: new Date("2025-06-20T07:30:00Z"),
-    hora_salida: new Date("2025-06-20T09:30:00Z"),
+    zona: {
+      _id: idZonasMedellinE,
+      nombre: "Zona E",
+      tarifa_hora: 2100
+    },
+    hora_entrada: ISODate("2025-07-09T06:00:00Z"),
+    hora_salida: ISODate("2025-07-09T07:00:00Z"),
+    tiempo_total: 1,
+    costo: 2100
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos28,
+      placa: "TRK007",
+      tipo: "camion"
+    },
+    sede_id: idSedeCali,
+    zona: {
+      _id: idZonasCaliD,
+      nombre: "Zona D",
+      tarifa_hora: 8200
+    },
+    hora_entrada: ISODate("2025-07-09T13:30:00Z"),
+    hora_salida: ISODate("2025-07-09T15:30:00Z"),
+    tiempo_total: 2,
+    costo: 16400
+  },
+  {
+    vehiculo: {
+      _id: idVehiculos6,
+      placa: "PQR678",
+      tipo: "carro"
+    },
+    sede_id: idSedeMedellin,
+    zona: {
+      _id: idZonasMedellinC,
+      nombre: "Zona C",
+      tarifa_hora: 3500
+    },
+    hora_entrada: ISODate("2025-07-09T07:15:00Z"),
+    hora_salida: ISODate("2025-07-09T09:15:00Z"),
     tiempo_total: 2,
     costo: 7000
   },
   {
-    vehiculo_id: idVehiculos6,
+    vehiculo: {
+      _id: idVehiculos7,
+      placa: "STU901",
+      tipo: "carro"
+    },
     sede_id: idSedeCali,
-    zona_id: idZonasCaliA,
-    hora_entrada: new Date("2025-06-19T12:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos7,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaB,
-    hora_entrada: new Date("2025-06-23T09:30:00Z"),
-    hora_salida: new Date("2025-06-23T11:30:00Z"),
+    zona: {
+      _id: idZonasCaliA,
+      nombre: "Zona A",
+      tarifa_hora: 3400
+    },
+    hora_entrada: ISODate("2025-07-09T08:00:00Z"),
+    hora_salida: ISODate("2025-07-09T10:00:00Z"),
     tiempo_total: 2,
-    costo: 7500
+    costo: 6800
   },
   {
-    vehiculo_id: idVehiculos8,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinE,
-    hora_entrada: new Date("2025-06-18T08:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos9,
+    vehiculo: {
+      _id: idVehiculos14,
+      placa: "FFF666",
+      tipo: "moto"
+    },
     sede_id: idSedeCali,
-    zona_id: idZonasCaliD,
-    hora_entrada: new Date("2025-06-26T14:00:00Z"),
-    hora_salida: new Date("2025-06-26T16:00:00Z"),
+    zona: {
+      _id: idZonasCaliB,
+      nombre: "Zona B",
+      tarifa_hora: 1900
+    },
+    hora_entrada: ISODate("2025-07-09T09:00:00Z"),
+    hora_salida: ISODate("2025-07-09T11:00:00Z"),
     tiempo_total: 2,
-    costo: 8000
+    costo: 3800
   },
   {
-    vehiculo_id: idVehiculos10,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaC,
-    hora_entrada: new Date("2025-06-17T10:15:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos11,
+    vehiculo: {
+      _id: idVehiculos25,
+      placa: "TRK004",
+      tipo: "camion"
+    },
     sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinA,
-    hora_entrada: new Date("2025-06-21T07:30:00Z"),
-    hora_salida: new Date("2025-06-21T09:30:00Z"),
+    zona: {
+      _id: idZonasMedellinD,
+      nombre: "Zona D",
+      tarifa_hora: 8500
+    },
+    hora_entrada: ISODate("2025-07-09T14:00:00Z"),
+    hora_salida: ISODate("2025-07-09T16:00:00Z"),
     tiempo_total: 2,
-    costo: 7200
-  },
-  {
-    vehiculo_id: idVehiculos12,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliE,
-    hora_entrada: new Date("2025-06-22T15:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos13,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaD,
-    hora_entrada: new Date("2025-06-20T14:30:00Z"),
-    hora_salida: new Date("2025-06-20T16:30:00Z"),
-    tiempo_total: 2,
-    costo: 7800
-  },
-  {
-    vehiculo_id: idVehiculos14,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinC,
-    hora_entrada: new Date("2025-06-19T11:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos15,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliB,
-    hora_entrada: new Date("2025-06-18T08:45:00Z"),
-    hora_salida: new Date("2025-06-18T11:00:00Z"),
-    tiempo_total: 2.25,
-    costo: 7800
-  },
-  {
-    vehiculo_id: idVehiculos16,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaA,
-    hora_entrada: new Date("2025-06-25T13:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos17,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinD,
-    hora_entrada: new Date("2025-06-22T09:00:00Z"),
-    hora_salida: new Date("2025-06-22T11:30:00Z"),
-    tiempo_total: 2.5,
-    costo: 8200
-  },
-  {
-    vehiculo_id: idVehiculos18,
-    sede_id: idSedeCali,
-    zona_id: idZonasCaliC,
-    hora_entrada: new Date("2025-06-19T10:30:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
-  },
-  {
-    vehiculo_id: idVehiculos19,
-    sede_id: idSedeBogota,
-    zona_id: idZonasBogotaE,
-    hora_entrada: new Date("2025-06-21T16:00:00Z"),
-    hora_salida: new Date("2025-06-21T18:30:00Z"),
-    tiempo_total: 2.5,
-    costo: 8500
-  },
-  {
-    vehiculo_id: idVehiculos20,
-    sede_id: idSedeMedellin,
-    zona_id: idZonasMedellinB,
-    hora_entrada: new Date("2025-06-24T14:00:00Z"),
-    hora_salida: null,
-    tiempo_total: null,
-    costo: null
+    costo: 17000
   }
 ])
 
