@@ -213,7 +213,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3000
     },
     hora_entrada: ISODate("2025-07-09T07:30:00Z"),
@@ -230,7 +230,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 3500
     },
     hora_entrada: ISODate("2025-07-09T08:15:00Z"),
@@ -247,7 +247,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3000
     },
     hora_entrada: ISODate("2025-07-09T10:00:00Z"),
@@ -264,7 +264,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 2000
     },
     hora_entrada: ISODate("2025-07-09T07:00:00Z"),
@@ -281,7 +281,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1000
     },
     hora_entrada: ISODate("2025-07-09T06:00:00Z"),
@@ -298,7 +298,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8000
     },
     hora_entrada: ISODate("2025-07-09T09:00:00Z"),
@@ -315,7 +315,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3200
     },
     hora_entrada: ISODate("2025-07-09T07:45:00Z"),
@@ -332,7 +332,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 2100
     },
     hora_entrada: ISODate("2025-07-09T08:00:00Z"),
@@ -349,7 +349,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1000
     },
     hora_entrada: ISODate("2025-07-09T10:30:00Z"),
@@ -366,7 +366,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8000
     },
     hora_entrada: ISODate("2025-07-09T11:00:00Z"),
@@ -383,7 +383,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 3500
     },
     hora_entrada: ISODate("2025-07-09T08:30:00Z"),
@@ -400,7 +400,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3200
     },
     hora_entrada: ISODate("2025-07-09T09:00:00Z"),
@@ -417,7 +417,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 2100
     },
     hora_entrada: ISODate("2025-07-09T06:30:00Z"),
@@ -434,7 +434,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 1200
     },
     hora_entrada: ISODate("2025-07-09T10:00:00Z"),
@@ -451,7 +451,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8500
     },
     hora_entrada: ISODate("2025-07-09T11:00:00Z"),
@@ -468,7 +468,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3400
     },
     hora_entrada: ISODate("2025-07-09T09:30:00Z"),
@@ -485,7 +485,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 1900
     },
     hora_entrada: ISODate("2025-07-09T07:30:00Z"),
@@ -502,7 +502,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1100
     },
     hora_entrada: ISODate("2025-07-09T08:00:00Z"),
@@ -519,7 +519,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8200
     },
     hora_entrada: ISODate("2025-07-09T10:00:00Z"),
@@ -536,7 +536,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1100
     },
     hora_entrada: ISODate("2025-07-09T06:00:00Z"),
@@ -552,7 +552,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 3000
     },
     hora_entrada: ISODate("2025-07-09T08:15:00Z"),
@@ -569,7 +569,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3000
     },
     hora_entrada: ISODate("2025-07-09T11:00:00Z"),
@@ -586,7 +586,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 2100
     },
     hora_entrada: ISODate("2025-07-09T10:00:00Z"),
@@ -603,7 +603,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 1900
     },
     hora_entrada: ISODate("2025-07-09T07:00:00Z"),
@@ -620,7 +620,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1000
     },
     hora_entrada: ISODate("2025-07-09T10:00:00Z"),
@@ -637,7 +637,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 1200
     },
     hora_entrada: ISODate("2025-07-09T09:30:00Z"),
@@ -654,7 +654,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8500
     },
     hora_entrada: ISODate("2025-07-09T07:45:00Z"),
@@ -671,7 +671,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8500
     },
     hora_entrada: ISODate("2025-07-09T12:00:00Z"),
@@ -688,7 +688,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8200
     },
     hora_entrada: ISODate("2025-07-09T10:30:00Z"),
@@ -705,7 +705,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8200
     },
     hora_entrada: ISODate("2025-07-09T07:30:00Z"),
@@ -722,7 +722,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 2000
     },
     hora_entrada: ISODate("2025-07-09T06:00:00Z"),
@@ -739,7 +739,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3200
     },
     hora_entrada: ISODate("2025-07-09T08:00:00Z"),
@@ -756,7 +756,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 3500
     },
     hora_entrada: ISODate("2025-07-09T07:00:00Z"),
@@ -773,7 +773,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3000
     },
     hora_entrada: ISODate("2025-07-09T06:30:00Z"),
@@ -790,7 +790,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1000
     },
     hora_entrada: ISODate("2025-07-09T09:15:00Z"),
@@ -807,7 +807,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 3500
     },
     hora_entrada: ISODate("2025-07-09T07:30:00Z"),
@@ -824,7 +824,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1000
     },
     hora_entrada: ISODate("2025-07-09T06:00:00Z"),
@@ -841,7 +841,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8000
     },
     hora_entrada: ISODate("2025-07-09T11:30:00Z"),
@@ -858,7 +858,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeBogota,
     zona: {
       _id: idZonasBogotaD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8000
     },
     hora_entrada: ISODate("2025-07-09T09:30:00Z"),
@@ -875,7 +875,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1100
     },
     hora_entrada: ISODate("2025-07-09T12:30:00Z"),
@@ -891,7 +891,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 3500
     },
     hora_entrada: ISODate("2025-07-09T06:45:00Z"),
@@ -908,7 +908,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3200
     },
     hora_entrada: ISODate("2025-07-09T10:00:00Z"),
@@ -925,7 +925,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 1200
     },
     hora_entrada: ISODate("2025-07-09T13:00:00Z"),
@@ -942,7 +942,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 1100
     },
     hora_entrada: ISODate("2025-07-09T08:30:00Z"),
@@ -959,7 +959,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinE,
-      nombre: "Zona E",
+      nombre: "Zona_E",
       tarifa_hora: 2100
     },
     hora_entrada: ISODate("2025-07-09T06:00:00Z"),
@@ -976,7 +976,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8200
     },
     hora_entrada: ISODate("2025-07-09T13:30:00Z"),
@@ -993,7 +993,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinC,
-      nombre: "Zona C",
+      nombre: "Zona_C",
       tarifa_hora: 3500
     },
     hora_entrada: ISODate("2025-07-09T07:15:00Z"),
@@ -1010,7 +1010,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliA,
-      nombre: "Zona A",
+      nombre: "Zona_A",
       tarifa_hora: 3400
     },
     hora_entrada: ISODate("2025-07-09T08:00:00Z"),
@@ -1027,7 +1027,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeCali,
     zona: {
       _id: idZonasCaliB,
-      nombre: "Zona B",
+      nombre: "Zona_B",
       tarifa_hora: 1900
     },
     hora_entrada: ISODate("2025-07-09T09:00:00Z"),
@@ -1044,7 +1044,7 @@ let parqueos = db.parqueos.insertMany([
     sede_id: idSedeMedellin,
     zona: {
       _id: idZonasMedellinD,
-      nombre: "Zona D",
+      nombre: "Zona_D",
       tarifa_hora: 8500
     },
     hora_entrada: ISODate("2025-07-09T14:00:00Z"),
