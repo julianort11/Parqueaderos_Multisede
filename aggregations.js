@@ -183,3 +183,18 @@ db.parqueos.aggregate([
         } 
     }
 ])
+
+// function calcularCostoParqueo(parqueo) {
+//   const { hora_entrada, hora_salida, zona } = parqueo;
+
+//   const entrada = new Date(hora_entrada);
+//   const salida = new Date(hora_salida);
+
+//   const diferenciaMs = salida - entrada;
+//   const horasTotales = diferenciaMs / (1000 * 60 * 60);
+
+//   const tiempo_total = Math.round(horasTotales);
+//   const costo = tiempo_total * zona.tarifa_hora;
+
+//   return { tiempo_total, costo };
+// }
