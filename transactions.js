@@ -9,13 +9,21 @@ session.startTransaction();
 try {
     // Insertar un nuevo registro en la colección parqueos
     dbSession.parqueos.insertOne({
-        vehiculo_id: idVehiculos5,             
-        sede_id: idSedeMedellin,               
-        zona_id: idZonasMedellinA,
-        hora_entrada: new Date("2025-06-22T14:00:00Z"),
-        hora_salida: null,                      
-        tiempo_total: null,                    
-        costo: null                            
+        vehiculo: {
+            _id: idVehiculos7,
+            placa: "STU901",
+            tipo: "carro"
+        },
+        sede_id: idSedeMedellin,
+        zona: {
+            _id: idZonasMedellinA,
+            nombre: "Zona_A",
+            tarifa_hora: 3400
+        },
+        hora_entrada: ISODate("2025-07-09T08:00:00Z"),
+        hora_salida: null,
+        tiempo_total: 2,
+        costo: 6800                          
     });
     
     // Actualizar la colección zonas para reducir los cupos disponibles en la zona correspondiente
